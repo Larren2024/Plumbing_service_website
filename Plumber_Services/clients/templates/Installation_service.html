@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+        .about-header {
+            background: url({% static 'main/images/p8.jpg' %}); center/cover no-repeat;
+            height: 45vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+        }
+        .icon-box {
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .icon-box:hover {
+            transform: translateY(-5px);
+            background-color: #f5f5f5;
+
+    </style>
+
+<!-- Hero Banner -->
+    <div class="about-header">
+        <h1 class="fw-bold display-4">Installation Services</h1>
+    </div>
+
+    <!-- About Section -->
+    <section class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-3">Installation Services</h2>
+                <p class="lead">
+                    We are a professional plumbing services company dedicated to delivering reliable,
+                    affordable, and high-quality solutions for homes and businesses. With years of
+                    experience, our team provides exceptional workmanship and friendly customer care.
+                </p>
+                <p>
+                    From emergency repairs to full system installations, we ensure each job is completed
+                    with precision, safety, and attention to detail. Your satisfaction is our top priority.
+                </p>
+
+                <div class="text-center mt-4">
+                    <a href="{% url 'request_service' %}" class="btn btn-primary btn-lg">
+                        Request Service
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <img src="{% static 'main/images/p8.jpg' %}"
+                     class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

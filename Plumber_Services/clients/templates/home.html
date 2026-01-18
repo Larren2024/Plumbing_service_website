@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ===================== FULL-WIDTH ANIMATED HERO ===================== -->
+<div class="hero-wrapper">
+  <img src="{% static 'main/images/face.png' %}" alt="Plumbing Image" class="hero-img">
+  <div class="hero-overlay">
+    <h1 class="display-5 fw-bold">Professional Plumbing Services in Kisaasi</h1>
+    <p class="lead">Fast • Affordable • Reliable</p>
+    <button class="btn btn-primary btn-lg">Book Now</button>
+  </div>
+</div>
+
+<!-- ===================== TWO-COLUMN LAYOUT ===================== -->
+<div class="container mt-5 mb-5">
+  <div class="row">
+
+    <!-- =============== LEFT COLUMN: SERVICE CARDS =============== -->
+    <div class="col-md-8">
+
+      <h3 class="mb-4">Our Plumbing Services</h3>
+
+      <div class="row">
+
+        <!-- Card 1 -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm h-100">
+            <img src="{% static 'main/images/p1.jpg' %}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Pipe Repairs</h5>
+              <p>Leak detection, burst pipes & replacement.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm h-100">
+            <img src="{% static 'main/images/p2.jpg' %}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Bathroom Installations</h5>
+              <p>Showers, toilets, sinks & modern accessories.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm h-100">
+            <img src="{% static 'main/images/p3.jpg' %}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Water Heater Services</h5>
+              <p>Installation and maintenance of heaters.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm h-100">
+            <img src="{% static 'main/images/p4.jpg' %}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Drainage Cleaning</h5>
+              <p>Blocked drains cleared safely & quickly.</p>
+              <button class="btn btn-primary">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =============== RIGHT SIDEBAR =============== -->
+    <div class="col-md-4">
+
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">Why Choose Us</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled">
+            <li>✔ 24/7 Fast Emergency Support</li>
+            <li>✔ Licensed & Experienced</li>
+            <li>✔ Affordable & Transparent Pricing</li>
+            <li>✔ Trusted in Kisaasi</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">Contact Us</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Phone:</strong> +256 700 123 456</p>
+          <p><strong>Email:</strong> info@kisaasiplumbing.com</p>
+          <button class="btn btn-primary w-100"
+          onclick="window.location.href='{% url 'request_service' %}'">
+          Request a Plumber
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== HERO CSS ANIMATION ===================== -->
+<style>
+  .hero-wrapper {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    animation: heroZoom 12s ease-in-out infinite;
+  }
+
+  @keyframes heroZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    color: white;
+    text-shadow: 1px 1px 10px black;
+  }
+</style>
+
+{% endblock %}

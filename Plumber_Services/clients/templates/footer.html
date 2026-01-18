@@ -1,0 +1,83 @@
+
+<!-- ===================== BOOTSTRAP FOOTER ===================== -->
+<footer class="bg-primary text-white pt-4 mt-5">
+
+  <div class="container">
+    <div class="row">
+
+      <!-- Business Info -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">{{company_name}}</h5>
+        <p>
+          Professional plumbing repairs, installations, and emergency services
+          across Kisaasi and surrounding Kampala areas.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Contact Us</h6>
+        <p class="mb-1">Address: {{Address}}</p>
+        <p class="mb-1">Phone: <strong>{{phone_number}}</strong></p>
+        <p class="mb-1">Email: <strong>{{email}}</strong></p>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Subscribe for Tips</h6>
+        <div class="input-group mb-2">
+          <input type="email" id="newsletterEmail" class="form-control" placeholder="Your email">
+          <button class="btn btn-light" onclick="subscribe()">Go</button>
+        </div>
+        <small id="subMsg"></small>
+      </div>
+
+    </div>
+
+    <hr class="border-light">
+
+    <!-- Bottom -->
+    <div class="text-center pb-3">
+      © <span id="year"></span> {{company_name}} — All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== OPTIONAL SMALL CSS ===================== -->
+<style>
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+  // Insert current year automatically
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Newsletter function
+  function subscribe() {
+    const email = document.getElementById("newsletterEmail").value;
+    const msg = document.getElementById("subMsg");
+
+    if (!email.includes("@")) {
+      msg.style.color = "yellow";
+      msg.textContent = "Please enter a valid email.";
+    } else {
+      msg.style.color = "lightgreen";
+      msg.textContent = "Thank you for subscribing!";
+      document.getElementById("newsletterEmail").value = "";
+    }
+  }
+</script>
